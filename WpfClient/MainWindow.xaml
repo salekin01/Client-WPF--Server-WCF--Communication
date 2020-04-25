@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    <Border Padding="15">
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/dollar.jpg"  />
+            </StackPanel.Background>
+
+            <TextBlock Text="Currency Converter" FontWeight="ExtraBold" FontSize="16" HorizontalAlignment="Center" Margin="0 15 0 20" />
+
+            <RadioButton x:Name="RadioButton_REST" IsChecked="True">Communicate server using wcf REST</RadioButton>
+            <RadioButton x:Name="RadioButton_ServiceRef" Margin="0 0 0 10">Communicate server using wcf ServiceReference</RadioButton>
+
+            <TextBlock Text="Number" FontWeight="Bold" Margin="0 0 0 3" />
+            <TextBox x:Name="NumberTextBox" Padding="2" Margin="0 0 0 3" Background="Transparent"/>
+            <TextBlock Text="Number to convert to words (as currency)" FontWeight="Light" Margin="0 0 0 20" />
+
+            <TextBlock Text="Currency in words" FontWeight="Bold" Margin="0 0 0 3" />
+            <TextBox x:Name="CurrencyTextBox" Padding="2" IsReadOnly="True" TextWrapping="Wrap" AcceptsReturn="True" Margin="0 0 0 3" Background="Transparent" />
+            <TextBlock Text="shows in dollars" FontWeight="Light" Margin="0 0 0 40"/>
+
+            <Button x:Name="ConvertButton" Click="ConvertButton_Click" Content="Convert" Background="LightBlue" />
+        </StackPanel>
+    </Border>
+</Window>
